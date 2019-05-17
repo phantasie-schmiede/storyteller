@@ -1,0 +1,80 @@
+<div class="ps_diary">
+	<div class="col-xs-3">
+		<f:if condition="{settings.image}">
+			<f:image class="img-responsive" src="uploads/tx_psdiary/{settings.image}" alt="{settings.image}" />
+		</f:if>
+		<h3 class="h4 align-center">
+			<f:translate key="summary" />
+		</h3>
+		<ul>
+			<f:for each="{entries}" as="entry">
+				<li>
+					<f:if condition="{currentEntry} == {entry}">
+						<f:then>
+							<f:format.crop maxCharacters="22">{entry.title}</f:format.crop>
+						</f:then>
+						<f:else>
+							<f:link.action action="list" arguments="{entry: entry}">
+								<f:format.crop maxCharacters="22">{entry.title}</f:format.crop>
+							</f:link.action>
+						</f:else>
+					</f:if>
+				</li>
+			</f:for>
+		</ul>
+	</div>
+
+	<div class="col-xs-9">
+		<div class="singleEntry">
+			<h2>{currentEntry.title}</h2>
+			<f:for each="{currentEntry.sortedContentElements}" as="contentElement">
+				<f:cObject typoscriptObjectPath="lib.tx_psdiary.contentElementRendering">tt_content_{contentElement.uid}</f:cObject>
+			</f:for>
+		</div>
+		<div class="entry-nav align-center">
+			<f:if condition="{currentEntry} == {firstEntry}">
+				<f:then>
+					<f:translate key="oldest-entry" />
+				</f:then>
+				<f:else>
+					<f:link.action action="list" arguments="{entry: firstEntry}">
+						<f:translate key="oldest-entry" />
+					</f:link.action>
+				</f:else>
+			</f:if>
+			<f:translate key="link-spacer" />
+			<f:if condition="{currentEntry} == {previousEntry}">
+				<f:then>
+					<f:translate key="previous-entry" />
+				</f:then>
+				<f:else>
+					<f:link.action action="list" arguments="{entry: previousEntry}">
+						<f:translate key="previous-entry" />
+					</f:link.action>
+				</f:else>
+			</f:if>
+			<f:translate key="link-spacer" />
+			<f:if condition="{currentEntry} == {nextEntry}">
+				<f:then>
+					<f:translate key="next-entry" />
+				</f:then>
+				<f:else>
+					<f:link.action action="list" arguments="{entry: nextEntry}">
+						<f:translate key="next-entry" />
+					</f:link.action>
+				</f:else>
+			</f:if>
+			<f:translate key="link-spacer" />
+			<f:if condition="{currentEntry} == {lastEntry}">
+				<f:then>
+					<f:translate key="latest-entry" />
+				</f:then>
+				<f:else>
+					<f:link.action action="list" arguments="{entry: lastEntry}">
+						<f:translate key="latest-entry" />
+					</f:link.action>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</div>

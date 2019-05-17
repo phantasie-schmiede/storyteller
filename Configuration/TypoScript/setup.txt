@@ -1,0 +1,34 @@
+plugin.tx_psdiary {
+	view {
+		templateRootPath = {$plugin.tx_psdiary.view.templateRootPath}
+		partialRootPath = {$plugin.tx_psdiary.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_psdiary.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_psdiary.persistence.storagePid}
+	}
+}
+
+lib.tx_psdiary.contentElementRendering = RECORDS
+lib.tx_psdiary.contentElementRendering {
+	tables = tt_content
+	source.current = 1
+	dontCheckPid = 1
+}
+
+config.tx_extbase {
+	persistence {
+		enableAutomaticCacheClearing = 1
+		updateReferenceIndex = 0
+		classes {
+			PS\PsDiary\Domain\Model\TtContent {
+				mapping {
+					tableName = tt_content
+					columns {
+						sorting.mapOnProperty = sorting
+					}
+				}
+			}
+		}
+	}
+}

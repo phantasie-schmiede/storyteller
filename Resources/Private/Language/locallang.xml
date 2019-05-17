@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the ps_diary extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="oldest-entry">ältester Eintrag</label>
+			<label index="previous-entry">vorheriger Eintrag</label>
+			<label index="next-entry">nächster Eintrag</label>
+			<label index="latest-entry">aktuellster Eintrag</label>
+
+			<label index="summary">Kapitel</label>
+			<label index="link-spacer">|</label>
+		</languageKey>
+	</data>
+</T3locallang>
