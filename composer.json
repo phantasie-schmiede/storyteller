@@ -1,0 +1,49 @@
+{
+    "authors": [
+        {
+            "email": "dn@phantasie-schmiede.de",
+            "name": "Daniel Ablass",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PSB\\PsbDiary\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PSB\\PsbDiary\\Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "bin-dir": ".Build/bin",
+        "sort-packages": true,
+        "vendor-dir": ".Build/vendor"
+    },
+    "description": "Blog-like way of publishing content with page browser",
+    "extra": {
+        "typo3/cms": {
+            "app-dir": ".Build",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "extension-key": "psb_diary",
+            "web-dir": ".Build/public"
+        }
+    },
+    "keywords": [
+        "configuration",
+        "development",
+        "extension",
+        "typo3"
+    ],
+    "license": "GPL-2.0-or-later",
+    "name": "psb/psb-diary",
+    "require": {
+        "php": "^7.4",
+        "typo3/cms-core": "^10.4 || ^11.2"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^6.8"
+    },
+    "type": "typo3-cms-extension"
+}
