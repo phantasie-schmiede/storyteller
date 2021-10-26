@@ -7,13 +7,13 @@
 		<sDEF>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:ps_diary/Resources/Private/Language/locallang_be.xml:flexform.title</sheetTitle>
+					<sheetTitle>LLL:EXT:psb_diary/Resources/Private/Language/locallang_be.xml:flexform.title</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 					<settings.image>
 						<TCEforms>
-							<label>LLL:EXT:ps_diary/Resources/Private/Language/locallang_be.xml:flexform.settings.image</label>
+							<label>LLL:EXT:psb_diary/Resources/Private/Language/locallang_be.xml:flexform.settings.image</label>
 							<config type="array">
 								<type>group</type>
 								<internal_type>file</internal_type>

@@ -21,5 +21,5 @@ $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_
 ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/Diary.xml');
 
 // adding table meta information
-ExtensionManagementUtility::addLLrefForTCAdescr('tx_psdiary_domain_model_entry', 'EXT:ps_diary/Resources/Private/Language/locallang_csh_tx_psdiary_domain_model_entry.xml');
+ExtensionManagementUtility::addLLrefForTCAdescr('tx_psdiary_domain_model_entry', 'EXT:psb_diary/Resources/Private/Language/locallang_csh_tx_psdiary_domain_model_entry.xml');
 ExtensionManagementUtility::allowTableOnStandardPages('tx_psdiary_domain_model_entry');

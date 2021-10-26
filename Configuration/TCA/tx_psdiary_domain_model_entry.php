@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 $fieldList = 'title, display_date, content_elements';
-$ll = 'LLL:EXT:ps_diary/Resources/Private/Language/locallang_be.xml:tx_psdiary_domain_model_entry';
+$ll = 'LLL:EXT:psb_diary/Resources/Private/Language/locallang_be.xml:tx_psdiary_domain_model_entry';
 
 return array(
     'ctrl'      => array(
@@ -28,7 +28,7 @@ return array(
             'endtime'   => 'endtime',
         ),
         'searchFields'             => 'title',
-        'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('ps_diary') . 'Resources/Public/Icons/tx_psdiary_domain_model_entry.gif'
+        'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('psb_diary') . 'Resources/Public/Icons/tx_psdiary_domain_model_entry.gif'
     ),
     'interface' => array(
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ' . $fieldList,
