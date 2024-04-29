@@ -1,14 +1,15 @@
 plugin.tx_psdiary {
-	view {
-		# cat=plugin.psb_diary/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:psb_diary/Resources/Private/Templates/
-		# cat=plugin.psb_diary/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:psb_diary/Resources/Private/Partials/
-		# cat=plugin.psb_diary/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:psb_diary/Resources/Private/Layouts/
-	}
-	persistence {
-		# cat=plugin.psb_diary//a; type=string; label=Default storage PID
-		storagePid =
-	}
+  view {
+    # cat=plugin.psb_diary/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:psb_diary/Resources/Private/Templates/
+    # cat=plugin.psb_diary/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:psb_diary/Resources/Private/Partials/
+    # cat=plugin.psb_diary/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:psb_diary/Resources/Private/Layouts/
+  }
+
+  persistence {
+    # cat=plugin.psb_diary//a; type=string; label=Default storage PID
+    storagePid =
+  }
 }

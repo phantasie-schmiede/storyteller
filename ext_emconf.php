@@ -7,16 +7,14 @@ $EM_CONF['psb_diary'] = [
     'category'         => 'plugin',
     'clearCacheOnLoad' => true,
     'constraints'      => [
-        'conflicts' => [
-        ],
+        'conflicts' => [],
         'depends'   => [
-            'psb_foundation' => '1.0.0',
+            'psb_foundation' => '2.2.1',
         ],
-        'suggests'  => [
-        ],
+        'suggests'  => [],
     ],
     'description'      => 'Blog-like way of publishing content with page browser',
     'state'            => 'beta',
     'title'            => 'PSbits | Diary',
-    'version'          => '3.0.0',
+    'version'          => '0.0.0',
 ];

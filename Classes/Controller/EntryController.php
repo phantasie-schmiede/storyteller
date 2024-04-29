@@ -1,68 +1,65 @@
 <?php
-namespace PS\PsDiary\Controller;
+declare(strict_types=1);
 
-use PS\PsDiary\Domain\Model\Entry;
-use PS\PsDiary\Domain\Repository\EntryRepository;
+/*
+ * This file is part of PSB Diary.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ */
+
+namespace PSB\PsbDiary\Controller;
+
+use PSB\PsbDiary\Domain\Model\Entry;
+use PSB\PsbDiary\Domain\Repository\EntryRepository;
+use PSB\PsbFoundation\Attribute\PluginAction;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-/***************************************************************
- *  Copyright notice
+/**
+ * Class EntryController
  *
- *  (c) 2014 Daniel Ablass <dn@phantasie-schmiede.de>
- *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+ * @package PSB\PsbDiary\Controller
+ */
 class EntryController extends ActionController
 {
-    /**
-     * @var \PS\PsDiary\Domain\Repository\EntryRepository
-     * @inject
-     */
-    protected $entryRepository;
+    public function __construct(
+        protected readonly EntryRepository $entryRepository,
+    ) {
+    }
 
-    /**
-     * @param \PS\PsDiary\Domain\Model\Entry $entry
-     * @dontvalidate $entry
-     */
-    public function listAction(Entry $entry = null)
+    #[PluginAction(default: true)]
+    public function listAction(Entry $entry = null): ResponseInterface
     {
         $entries = $this->entryRepository->findAll();
+
         if (!$entry) {
             $entry = $entries->getFirst();
         }
+
         $firstEntry = $entries->getFirst();
-        $lastEntry = $this->entryRepository->findLast()->getFirst();
-        if (!$previousEntry = $this->entryRepository->findPrevious($entry)->getFirst()) {
+        $lastEntry = $this->entryRepository->findLast()
+            ->getFirst();
+
+        if (!$previousEntry = $this->entryRepository->findPrevious($entry)
+            ->getFirst()) {
             $previousEntry = $firstEntry;
         }
-        if (!$nextEntry = $this->entryRepository->findNext($entry)->getFirst()) {
+
+        if (!$nextEntry = $this->entryRepository->findNext($entry)
+            ->getFirst()) {
             $nextEntry = $lastEntry;
         }
 
-        $this->view->assignMultiple(array(
+        $this->view->assignMultiple([
             'entries'       => $entries,
             'currentEntry'  => $entry,
             'firstEntry'    => $firstEntry,
             'lastEntry'     => $lastEntry,
             'previousEntry' => $previousEntry,
-            'nextEntry'     => $nextEntry
-        ));
-    }
+            'nextEntry'     => $nextEntry,
+        ]);
 
+        return $this->htmlResponse();
+    }
 }

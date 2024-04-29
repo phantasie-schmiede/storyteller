@@ -12,7 +12,6 @@
 			<label index="latest-entry">aktuellster Eintrag</label>
 
 			<label index="summary">Kapitel</label>
-			<label index="link-spacer">|</label>
 		</languageKey>
 	</data>
 </T3locallang>

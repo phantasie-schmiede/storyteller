@@ -1,201 +1,124 @@
 <?php
-namespace PS\PsDiary\Domain\Model;
+declare(strict_types=1);
+
+/*
+ * This file is part of PSB Diary.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ */
+
+namespace PSB\PsbDiary\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
-/***************************************************************
- *  Copyright notice
+/**
+ * Class TtContent
  *
- *  (c) 2011 Georg Ringer <typo3@ringerge.org>
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+ * @package PSB\PsbDiary\Domain\Model
+ */
 class TtContent extends AbstractEntity
 {
+    /**
+     * @var string
+     */
+    protected $CType;
+    /**
+     * @var string
+     */
+    protected $altText;
+    /**
+     * @var string
+     */
+    protected $bodytext;
+    /**
+     * @var integer
+     */
+    protected $cols;
     /**
      * @var \DateTime
      */
     protected $crdate;
-
+    /**
+     * @var string
+     */
+    protected $header;
+    /**
+     * @var string
+     */
+    protected $headerLayout;
+    /**
+     * @var string
+     */
+    protected $headerLink;
+    /**
+     * @var string
+     */
+    protected $headerPosition;
+    /**
+     * @var string
+     */
+    protected $image;
+    /**
+     * @var string
+     */
+    protected $imageLink;
+    /**
+     * @var string
+     */
+    protected $imageZoom;
+    /**
+     * @var integer
+     */
+    protected $imageborder;
+    /**
+     * @var string
+     */
+    protected $imagecaption;
+    /**
+     * @var integer
+     */
+    protected $imagecols;
+    /**
+     * @var integer
+     */
+    protected $imageorient;
+    /**
+     * @var integer
+     */
+    protected $imagewidth;
+    /**
+     * @var string
+     */
+    protected $layout;
+    /**
+     * @var string
+     */
+    protected $listType;
+    /**
+     * @var string
+     */
+    protected $media;
+    /**
+     * @var integer
+     */
+    protected $sorting;
+    /**
+     * @var string
+     */
+    protected $subheader;
+    /**
+     * @var string
+     */
+    protected $titleText;
     /**
      * @var \DateTime
      */
     protected $tstamp;
 
-    /**
-     * @var string
-     */
-    protected $CType;
-
-    /**
-     * @var string
-     */
-    protected $header;
-
-    /**
-     * @var string
-     */
-    protected $headerPosition;
-
-    /**
-     * @var string
-     */
-    protected $bodytext;
-
-    /**
-     * @var string
-     */
-    protected $image;
-
-    /**
-     * @var integer
-     */
-    protected $imagewidth;
-
-    /**
-     * @var integer
-     */
-    protected $imageorient;
-
-    /**
-     * @var string
-     */
-    protected $imagecaption;
-
-    /**
-     * @var integer
-     */
-    protected $imagecols;
-
-    /**
-     * @var integer
-     */
-    protected $imageborder;
-
-    /**
-     * @var string
-     */
-    protected $media;
-
-    /**
-     * @var string
-     */
-    protected $layout;
-
-    /**
-     * @var integer
-     */
-    protected $cols;
-
-    /**
-     * @var string
-     */
-    protected $subheader;
-
-    /**
-     * @var string
-     */
-    protected $headerLink;
-
-    /**
-     * @var string
-     */
-    protected $imageLink;
-
-    /**
-     * @var string
-     */
-    protected $imageZoom;
-
-    /**
-     * @var string
-     */
-    protected $altText;
-
-    /**
-     * @var string
-     */
-    protected $titleText;
-
-    /**
-     * @var string
-     */
-    protected $headerLayout;
-
-    /**
-     * @var string
-     */
-    protected $listType;
-
-    /**
-     * @var integer
-     */
-    protected $sorting;
-
-
-    public function getCrdate()
+    public function getAltText()
     {
-        return $this->crdate;
-    }
-
-    public function setCrdate($crdate)
-    {
-        $this->crdate = $crdate;
-    }
-
-    public function getTstamp()
-    {
-        return $this->tstamp;
-    }
-
-    public function setTstamp($tstamp)
-    {
-        $this->tstamp = $tstamp;
-    }
-
-    public function getCType()
-    {
-        return $this->CType;
-    }
-
-    public function setCType($CType)
-    {
-        $this->CType = $CType;
-    }
-
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    public function setHeader($header)
-    {
-        $this->header = $header;
-    }
-
-    public function getHeaderPosition()
-    {
-        return $this->headerPosition;
-    }
-
-    public function setHeaderPosition($headerPosition)
-    {
-        $this->headerPosition = $headerPosition;
+        return $this->altText;
     }
 
     public function getBodytext()
@@ -203,89 +126,9 @@ class TtContent extends AbstractEntity
         return $this->bodytext;
     }
 
-    public function setBodytext($bodytext)
+    public function getCType()
     {
-        $this->bodytext = $bodytext;
-    }
-
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    public function getImagewidth()
-    {
-        return $this->imagewidth;
-    }
-
-    public function setImagewidth($imagewidth)
-    {
-        $this->imagewidth = $imagewidth;
-    }
-
-    public function getImageorient()
-    {
-        return $this->imageorient;
-    }
-
-    public function setImageorient($imageorient)
-    {
-        $this->imageorient = $imageorient;
-    }
-
-    public function getImagecaption()
-    {
-        return $this->imagecaption;
-    }
-
-    public function setImagecaption($imagecaption)
-    {
-        $this->imagecaption = $imagecaption;
-    }
-
-    public function getImagecols()
-    {
-        return $this->imagecols;
-    }
-
-    public function setImagecols($imagecols)
-    {
-        $this->imagecols = $imagecols;
-    }
-
-    public function getImageborder()
-    {
-        return $this->imageborder;
-    }
-
-    public function setImageborder($imageborder)
-    {
-        $this->imageborder = $imageborder;
-    }
-
-    public function getMedia()
-    {
-        return $this->media;
-    }
-
-    public function setMedia($media)
-    {
-        $this->media = $media;
-    }
-
-    public function getLayout()
-    {
-        return $this->layout;
-    }
-
-    public function setLayout($layout)
-    {
-        $this->layout = $layout;
+        return $this->CType;
     }
 
     public function getCols()
@@ -293,69 +136,14 @@ class TtContent extends AbstractEntity
         return $this->cols;
     }
 
-    public function setCols($cols)
+    public function getCrdate()
     {
-        $this->cols = $cols;
+        return $this->crdate;
     }
 
-    public function getSubheader()
+    public function getHeader()
     {
-        return $this->subheader;
-    }
-
-    public function setSubheader($subheader)
-    {
-        $this->subheader = $subheader;
-    }
-
-    public function getHeaderLink()
-    {
-        return $this->headerLink;
-    }
-
-    public function setHeaderLink($headerLink)
-    {
-        $this->headerLink = $headerLink;
-    }
-
-    public function getImageLink()
-    {
-        return $this->imageLink;
-    }
-
-    public function setImageLink($imageLink)
-    {
-        $this->imageLink = $imageLink;
-    }
-
-    public function getImageZoom()
-    {
-        return $this->imageZoom;
-    }
-
-    public function setImageZoom($imageZoom)
-    {
-        $this->imageZoom = $imageZoom;
-    }
-
-    public function getAltText()
-    {
-        return $this->altText;
-    }
-
-    public function setAltText($altText)
-    {
-        $this->altText = $altText;
-    }
-
-    public function getTitleText()
-    {
-        return $this->titleText;
-    }
-
-    public function setTitleText($titleText)
-    {
-        $this->titleText = $titleText;
+        return $this->header;
     }
 
     public function getHeaderLayout()
@@ -363,9 +151,59 @@ class TtContent extends AbstractEntity
         return $this->headerLayout;
     }
 
-    public function setHeaderLayout($headerLayout)
+    public function getHeaderLink()
     {
-        $this->headerLayout = $headerLayout;
+        return $this->headerLink;
+    }
+
+    public function getHeaderPosition()
+    {
+        return $this->headerPosition;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function getImageLink()
+    {
+        return $this->imageLink;
+    }
+
+    public function getImageZoom()
+    {
+        return $this->imageZoom;
+    }
+
+    public function getImageborder()
+    {
+        return $this->imageborder;
+    }
+
+    public function getImagecaption()
+    {
+        return $this->imagecaption;
+    }
+
+    public function getImagecols()
+    {
+        return $this->imagecols;
+    }
+
+    public function getImageorient()
+    {
+        return $this->imageorient;
+    }
+
+    public function getImagewidth()
+    {
+        return $this->imagewidth;
+    }
+
+    public function getLayout()
+    {
+        return $this->layout;
     }
 
     public function getListType()
@@ -373,9 +211,9 @@ class TtContent extends AbstractEntity
         return $this->listType;
     }
 
-    public function setListType($listType)
+    public function getMedia()
     {
-        $this->listType = $listType;
+        return $this->media;
     }
 
     public function getSorting()
@@ -383,9 +221,139 @@ class TtContent extends AbstractEntity
         return $this->sorting;
     }
 
+    public function getSubheader()
+    {
+        return $this->subheader;
+    }
+
+    public function getTitleText()
+    {
+        return $this->titleText;
+    }
+
+    public function getTstamp()
+    {
+        return $this->tstamp;
+    }
+
+    public function setAltText($altText)
+    {
+        $this->altText = $altText;
+    }
+
+    public function setBodytext($bodytext)
+    {
+        $this->bodytext = $bodytext;
+    }
+
+    public function setCType($CType)
+    {
+        $this->CType = $CType;
+    }
+
+    public function setCols($cols)
+    {
+        $this->cols = $cols;
+    }
+
+    public function setCrdate($crdate)
+    {
+        $this->crdate = $crdate;
+    }
+
+    public function setHeader($header)
+    {
+        $this->header = $header;
+    }
+
+    public function setHeaderLayout($headerLayout)
+    {
+        $this->headerLayout = $headerLayout;
+    }
+
+    public function setHeaderLink($headerLink)
+    {
+        $this->headerLink = $headerLink;
+    }
+
+    public function setHeaderPosition($headerPosition)
+    {
+        $this->headerPosition = $headerPosition;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function setImageLink($imageLink)
+    {
+        $this->imageLink = $imageLink;
+    }
+
+    public function setImageZoom($imageZoom)
+    {
+        $this->imageZoom = $imageZoom;
+    }
+
+    public function setImageborder($imageborder)
+    {
+        $this->imageborder = $imageborder;
+    }
+
+    public function setImagecaption($imagecaption)
+    {
+        $this->imagecaption = $imagecaption;
+    }
+
+    public function setImagecols($imagecols)
+    {
+        $this->imagecols = $imagecols;
+    }
+
+    public function setImageorient($imageorient)
+    {
+        $this->imageorient = $imageorient;
+    }
+
+    public function setImagewidth($imagewidth)
+    {
+        $this->imagewidth = $imagewidth;
+    }
+
+    public function setLayout($layout)
+    {
+        $this->layout = $layout;
+    }
+
+    public function setListType($listType)
+    {
+        $this->listType = $listType;
+    }
+
+    public function setMedia($media)
+    {
+        $this->media = $media;
+    }
+
     public function setSorting($sorting)
     {
         $this->sorting = $sorting;
+    }
+
+    public function setSubheader($subheader)
+    {
+        $this->subheader = $subheader;
+    }
+
+    public function setTitleText($titleText)
+    {
+        $this->titleText = $titleText;
+    }
+
+    public function setTstamp($tstamp)
+    {
+        $this->tstamp = $tstamp;
     }
 
 }
