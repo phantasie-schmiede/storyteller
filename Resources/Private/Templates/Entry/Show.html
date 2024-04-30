@@ -1,10 +1,12 @@
 <html
     data-namespace-typo3-fluid="true"
-    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-<div class="psb_diary">
-    <div class="col-xs-3">
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:psb="http://typo3.org/ns/PSB/PsbFoundation/ViewHelpers"
+    xmlns:psbvh="http://typo3.org/ns/PSB/PsbViewHelpers/ViewHelpers">
+<div class="row">
+    <div class="col-3">
         <h3 class="h4 align-center">
-            <f:translate key="summary" />
+            <psb:translate id="chapter" />
         </h3>
         <ul>
             <f:for
@@ -28,16 +30,10 @@
         </ul>
     </div>
 
-    <div class="col-xs-9">
+    <div class="col-9">
         <div class="singleEntry">
             <h2>{currentEntry.title}</h2>
-            <f:for
-                as="contentElement"
-                each="{currentEntry.sortedContentElements}">
-                <f:cObject typoscriptObjectPath="lib.tx_psdiary.contentElementRendering">
-                    tt_content_{contentElement.uid}
-                </f:cObject>
-            </f:for>
+            <psbvh:content.render contentElements="{currentEntry.contentElements}" />
         </div>
         <div class="entry-nav align-center">
             <f:if condition="{currentEntry} == {firstEntry}">

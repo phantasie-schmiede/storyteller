@@ -29,7 +29,7 @@ class EntryController extends ActionController
     }
 
     #[PluginAction(default: true)]
-    public function listAction(Entry $entry = null): ResponseInterface
+    public function showAction(Entry $entry = null): ResponseInterface
     {
         $entries = $this->entryRepository->findAll();
 

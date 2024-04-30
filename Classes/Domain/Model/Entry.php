@@ -11,6 +11,10 @@ declare(strict_types=1);
 namespace PSB\PsbDiary\Domain\Model;
 
 use DateTime;
+use PSB\PsbFoundation\Attribute\TCA\ColumnType\Datetime as TcaDatetime;
+use PSB\PsbFoundation\Attribute\TCA\ColumnType\Inline;
+use PSB\PsbFoundation\Attribute\TCA\ColumnType\Input;
+use PSB\PsbFoundation\Attribute\TCA\Ctrl;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -19,53 +23,35 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  *
  * @package PSB\PsbDiary\Domain\Model
  */
+#[Ctrl(label: 'title', searchFields: ['title'])]
 class Entry extends AbstractEntity
 {
     /**
      * @var ObjectStorage<TtContent>
      */
+    #[Inline(linkedModel: TtContent::class, mm: 'tx_psbdiary_entry_content_mm')]
     protected ObjectStorage $contentElements;
 
+    #[TcaDatetime]
     protected DateTime $displayDate;
 
+    #[Input]
     protected string $title = '';
 
     /**
      * @return ObjectStorage<TtContent>
      */
-    public function getContentElements()
+    public function getContentElements(): ObjectStorage
     {
         return $this->contentElements;
     }
 
-    /**
-     * @return int
-     */
-    public function getDisplayDate()
+    public function getDisplayDate(): DateTime
     {
         return $this->displayDate;
     }
 
-    public function getSortedContentElements()
-    {
-        static $sortedContentElements = [];
-        if (!isset($sortedContentElements[$this->getUid()])) {
-            $contentElements = $this->getContentElements();
-            $tmpContentElements = [];
-            foreach ($contentElements as $contentElement) {
-                $tmpContentElements[$contentElement->getSorting()] = $contentElement;
-            }
-            ksort($tmpContentElements);
-            $sortedContentElements[$this->getUid()] = $tmpContentElements;
-        }
-
-        return $sortedContentElements[$this->getUid()];
-    }
-
-    /**
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -73,23 +59,17 @@ class Entry extends AbstractEntity
     /**
      * @param ObjectStorage<TtContent> $contentElements
      */
-    public function setContentElements($contentElements)
+    public function setContentElements($contentElements): void
     {
         $this->contentElements = $contentElements;
     }
 
-    /**
-     * @param int $displayDate
-     */
-    public function setDisplayDate($displayDate)
+    public function setDisplayDate(DateTime $displayDate): void
     {
         $this->displayDate = $displayDate;
     }
 
-    /**
-     * @param string $title
-     */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }

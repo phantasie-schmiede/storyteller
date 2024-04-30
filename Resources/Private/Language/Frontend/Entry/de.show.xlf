@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file datatype="plaintext"
+        date="2024-04-30T10:10:00+01:00"
+        original="messages"
+        product-name="psb_diary"
+        source-language="en"
+        target-language="de">
+        <body>
+            <trans-unit id="chapter">
+                <source>Chapter</source>
+                <target>Kapitel</target>
+            </trans-unit>
+            <trans-unit id="latestEntry">
+                <source>latest entry</source>
+                <target>aktueller Eintrag</target>
+            </trans-unit>
+            <trans-unit id="nextEntry">
+                <source>next entry</source>
+                <target>nächster Eintrag</target>
+            </trans-unit>
+            <trans-unit id="oldestEntry">
+                <source>oldest entry</source>
+                <target>ältester Eintrag</target>
+            </trans-unit>
+            <trans-unit id="previousEntry">
+                <source>previous entry</source>
+                <target>vorheriger Eintrag</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

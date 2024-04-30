@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file datatype="plaintext"
+        date="2024-04-30T09:53:00+01:00"
+        original="messages"
+        product-name="psb_diary"
+        source-language="en">
+        <body>
+            <trans-unit id="contentElements">
+                <source>Content elements</source>
+            </trans-unit>
+            <trans-unit id="ctrl.title">
+                <source>Entry</source>
+            </trans-unit>
+            <trans-unit id="displayDate">
+                <source>Display date</source>
+            </trans-unit>
+            <trans-unit id="title">
+                <source>Title</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
