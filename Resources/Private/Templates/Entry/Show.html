@@ -19,7 +19,7 @@
                         </f:then>
                         <f:else>
                             <f:link.action
-                                action="list"
+                                action="show"
                                 arguments="{entry: entry}">
                                 <f:format.crop maxCharacters="22">{entry.title}</f:format.crop>
                             </f:link.action>
@@ -29,7 +29,6 @@
             </f:for>
         </ul>
     </div>
-
     <div class="col-9">
         <div class="singleEntry">
             <h2>{currentEntry.title}</h2>
@@ -38,52 +37,52 @@
         <div class="entry-nav align-center">
             <f:if condition="{currentEntry} == {firstEntry}">
                 <f:then>
-                    <f:translate key="oldest-entry" />
+                    <psb:translate id="oldestEntry" />
                 </f:then>
                 <f:else>
                     <f:link.action
-                        action="list"
+                        action="show"
                         arguments="{entry: firstEntry}">
-                        <f:translate key="oldest-entry" />
+                        <psb:translate id="oldestEntry" />
                     </f:link.action>
                 </f:else>
             </f:if>
             |
             <f:if condition="{currentEntry} == {previousEntry}">
                 <f:then>
-                    <f:translate key="previous-entry" />
+                    <psb:translate id="previousEntry" />
                 </f:then>
                 <f:else>
                     <f:link.action
-                        action="list"
+                        action="show"
                         arguments="{entry: previousEntry}">
-                        <f:translate key="previous-entry" />
+                        <psb:translate id="previousEntry" />
                     </f:link.action>
                 </f:else>
             </f:if>
             |
             <f:if condition="{currentEntry} == {nextEntry}">
                 <f:then>
-                    <f:translate key="next-entry" />
+                    <psb:translate id="nextEntry" />
                 </f:then>
                 <f:else>
                     <f:link.action
-                        action="list"
+                        action="show"
                         arguments="{entry: nextEntry}">
-                        <f:translate key="next-entry" />
+                        <psb:translate id="nextEntry" />
                     </f:link.action>
                 </f:else>
             </f:if>
             |
             <f:if condition="{currentEntry} == {lastEntry}">
                 <f:then>
-                    <f:translate key="latest-entry" />
+                    <psb:translate id="latestEntry" />
                 </f:then>
                 <f:else>
                     <f:link.action
-                        action="list"
+                        action="show"
                         arguments="{entry: lastEntry}">
-                        <f:translate key="latest-entry" />
+                        <psb:translate id="latestEntry" />
                     </f:link.action>
                 </f:else>
             </f:if>

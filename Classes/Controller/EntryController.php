@@ -15,6 +15,7 @@ use PSB\PsbDiary\Domain\Repository\EntryRepository;
 use PSB\PsbFoundation\Attribute\PluginAction;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 
 /**
  * Class EntryController
@@ -28,6 +29,9 @@ class EntryController extends ActionController
     ) {
     }
 
+    /**
+     * @throws InvalidQueryException
+     */
     #[PluginAction(default: true)]
     public function showAction(Entry $entry = null): ResponseInterface
     {
@@ -38,16 +42,13 @@ class EntryController extends ActionController
         }
 
         $firstEntry = $entries->getFirst();
-        $lastEntry = $this->entryRepository->findLast()
-            ->getFirst();
+        $lastEntry = $this->entryRepository->findLast();
 
-        if (!$previousEntry = $this->entryRepository->findPrevious($entry)
-            ->getFirst()) {
+        if (!$previousEntry = $this->entryRepository->findPrevious($entry)) {
             $previousEntry = $firstEntry;
         }
 
-        if (!$nextEntry = $this->entryRepository->findNext($entry)
-            ->getFirst()) {
+        if (!$nextEntry = $this->entryRepository->findNext($entry)) {
             $nextEntry = $lastEntry;
         }
 

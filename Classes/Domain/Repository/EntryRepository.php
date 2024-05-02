@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace PSB\PsbDiary\Domain\Repository;
 
 use PSB\PsbDiary\Domain\Model\Entry;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
@@ -26,53 +26,57 @@ class EntryRepository extends Repository
         'displayDate' => QueryInterface::ORDER_ASCENDING,
     ];
 
-    /**
-     * @return QueryResultInterface
-     */
-    public function findLast()
+    public function findLast(): ?Entry
     {
         $query = $this->createQuery();
-        $query->setOrderings([
-            'displayDate' => QueryInterface::ORDER_DESCENDING,
-        ]);
-        $query->setLimit(1);
+        $query->setLimit(1)
+            ->setOrderings([
+                'displayDate' => QueryInterface::ORDER_DESCENDING,
+            ]);
 
-        return $query->execute();
+        return $query->execute()
+            ->getFirst();
     }
 
     /**
-     * @param Entry $entry
-     *
-     * @return QueryResultInterface
+     * @throws InvalidQueryException
      */
-    public function findNext($entry)
+    public function findNext(Entry $entry): ?Entry
     {
         $query = $this->createQuery();
         $query->matching(
-            $query->greaterThan('displayDate', $entry->getDisplayDate())
+            $query->greaterThan(
+                'displayDate',
+                $entry->getDisplayDate()
+                    ->format('Y-m-d H:i:s')
+            )
         );
         $query->setLimit(1);
 
-        return $query->execute();
+        return $query->execute()
+            ->getFirst();
     }
 
     /**
-     * @param Entry $entry
-     *
-     * @return QueryResultInterface
+     * @throws InvalidQueryException
      */
-    public function findPrevious($entry)
+    public function findPrevious(Entry $entry): ?Entry
     {
         $query = $this->createQuery();
-        $query->setOrderings([
-            'displayDate' => QueryInterface::ORDER_DESCENDING,
-        ]);
         $query->matching(
-            $query->lessThan('displayDate', $entry->getDisplayDate())
+            $query->lessThan(
+                'displayDate',
+                $entry->getDisplayDate()
+                    ->format('Y-m-d H:i:s')
+            )
         );
-        $query->setLimit(1);
+        $query->setLimit(1)
+            ->setOrderings([
+                'displayDate' => QueryInterface::ORDER_DESCENDING,
+            ]);
 
-        return $query->execute();
+        return $query->execute()
+            ->getFirst();
     }
 
 }
