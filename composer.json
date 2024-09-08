@@ -36,7 +36,7 @@
         "typo3"
     ],
     "license": "GPL-3.0-or-later",
-    "name": "psb/psb-diary",
+    "name": "psb/psb-storybook",
     "require": {
         "psb/psb-foundation": "@dev"
     },
