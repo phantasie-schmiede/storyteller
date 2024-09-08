@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB Diary.
+ * This file is part of PSB Storybook.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbDiary\Domain\Repository;
+namespace PSB\PsbStorybook\Domain\Repository;
 
-use PSB\PsbDiary\Domain\Model\Entry;
+use PSB\PsbStorybook\Domain\Model\Entry;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -18,7 +18,7 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 /**
  * Class EntryRepository
  *
- * @package PSB\PsbDiary\Domain\Repository
+ * @package PSB\PsbStorybook\Domain\Repository
  */
 class EntryRepository extends Repository
 {

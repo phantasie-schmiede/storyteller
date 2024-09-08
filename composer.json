@@ -8,12 +8,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "PSB\\PsbDiary\\": "Classes/"
+            "PSB\\PsbStorybook\\": "Classes/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PSB\\PsbDiary\\Tests\\": "Tests/"
+            "PSB\\PsbStorybook\\Tests\\": "Tests/"
         }
     },
     "config": {
@@ -26,7 +26,7 @@
         "typo3/cms": {
             "app-dir": ".Build",
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "extension-key": "psb_diary",
+            "extension-key": "psb_storybook",
             "web-dir": ".Build/public"
         }
     },

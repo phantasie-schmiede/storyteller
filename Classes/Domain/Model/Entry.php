@@ -2,13 +2,13 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB Diary.
+ * This file is part of PSB Storybook.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbDiary\Domain\Model;
+namespace PSB\PsbStorybook\Domain\Model;
 
 use DateTime;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Datetime as TcaDatetime;
@@ -21,7 +21,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 /**
  * Class Entry
  *
- * @package PSB\PsbDiary\Domain\Model
+ * @package PSB\PsbStorybook\Domain\Model
  */
 #[Ctrl(label: 'title', searchFields: ['title'])]
 class Entry extends AbstractEntity
@@ -29,7 +29,7 @@ class Entry extends AbstractEntity
     /**
      * @var ObjectStorage<TtContent>
      */
-    #[Inline(linkedModel: TtContent::class, mm: 'tx_psbdiary_entry_content_mm')]
+    #[Inline(linkedModel: TtContent::class, mm: 'tx_psbstorybook_entry_content_mm')]
     protected ObjectStorage $contentElements;
 
     #[TcaDatetime]

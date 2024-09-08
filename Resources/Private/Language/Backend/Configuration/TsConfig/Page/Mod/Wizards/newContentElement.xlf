@@ -3,11 +3,11 @@
     <file datatype="plaintext"
         date="2024-04-30T09:59:00+01:00"
         original="messages"
-        product-name="psb_diary"
+        product-name="psb_storybook"
         source-language="en">
         <body>
-            <trans-unit id="psb.elements.diary.description">
-                <source>Simple blog entries with date and content elements</source>
+            <trans-unit id="psb.elements.storybook.description">
+                <source>Simple chapters with content elements and navigation</source>
             </trans-unit>
         </body>
     </file>

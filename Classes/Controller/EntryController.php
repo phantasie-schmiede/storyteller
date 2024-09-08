@@ -2,16 +2,16 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB Diary.
+ * This file is part of PSB Storybook.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbDiary\Controller;
+namespace PSB\PsbStorybook\Controller;
 
-use PSB\PsbDiary\Domain\Model\Entry;
-use PSB\PsbDiary\Domain\Repository\EntryRepository;
+use PSB\PsbStorybook\Domain\Model\Entry;
+use PSB\PsbStorybook\Domain\Repository\EntryRepository;
 use PSB\PsbFoundation\Attribute\PluginAction;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -20,7 +20,7 @@ use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 /**
  * Class EntryController
  *
- * @package PSB\PsbDiary\Controller
+ * @package PSB\PsbStorybook\Controller
  */
 class EntryController extends ActionController
 {

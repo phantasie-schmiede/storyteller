@@ -1,11 +1,5 @@
-plugin.tx_psdiary {
-  view {
-    templateRootPath = {$plugin.tx_psdiary.view.templateRootPath}
-    partialRootPath = {$plugin.tx_psdiary.view.partialRootPath}
-    layoutRootPath = {$plugin.tx_psdiary.view.layoutRootPath}
-  }
-
+plugin.tx_psbstorybook {
   persistence {
-    storagePid = {$plugin.tx_psdiary.persistence.storagePid}
+    storagePid = {$plugin.tx_psbstorybook.persistence.storagePid}
   }
 }
