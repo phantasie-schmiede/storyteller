@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace PSB\PsbStorybook\Data;
 
-use PSB\PsbStorybook\Controller\EntryController;
+use PSB\PsbStorybook\Controller\ChapterController;
 use PSB\PsbFoundation\Data\AbstractExtensionInformation;
 use PSB\PsbFoundation\Data\PluginConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -28,7 +28,7 @@ class ExtensionInformation extends AbstractExtensionInformation
         $this->addPlugin(
             GeneralUtility::makeInstance(
                 PluginConfiguration::class,
-                controllers: [EntryController::class],
+                controllers: [ChapterController::class],
                 name       : 'Storybook'
             )
         );

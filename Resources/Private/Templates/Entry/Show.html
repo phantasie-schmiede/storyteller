@@ -10,18 +10,18 @@
         </h3>
         <ul>
             <f:for
-                as="entry"
-                each="{entries}">
+                as="chapter"
+                each="{chapters}">
                 <li>
-                    <f:if condition="{currentEntry} == {entry}">
+                    <f:if condition="{currentChapter} == {chapter}">
                         <f:then>
-                            <f:format.crop maxCharacters="22">{entry.title}</f:format.crop>
+                            <f:format.crop maxCharacters="22">{chapter.title}</f:format.crop>
                         </f:then>
                         <f:else>
                             <f:link.action
                                 action="show"
-                                arguments="{entry: entry}">
-                                <f:format.crop maxCharacters="22">{entry.title}</f:format.crop>
+                                arguments="{chapter: chapter}">
+                                <f:format.crop maxCharacters="22">{chapter.title}</f:format.crop>
                             </f:link.action>
                         </f:else>
                     </f:if>
@@ -30,59 +30,59 @@
         </ul>
     </div>
     <div class="col-9">
-        <div class="singleEntry">
-            <h2>{currentEntry.title}</h2>
-            <psbvh:content.render contentElements="{currentEntry.contentElements}" />
+        <div class="singleChapter">
+            <h2>{currentChapter.title}</h2>
+            <psbvh:content.render contentElements="{currentChapter.contentElements}" />
         </div>
-        <div class="entry-nav align-center">
-            <f:if condition="{currentEntry} == {firstEntry}">
+        <div class="chapter-nav align-center">
+            <f:if condition="{currentChapter} == {firstChapter}">
                 <f:then>
-                    <psb:translate id="oldestEntry" />
+                    <psb:translate id="oldestChapter" />
                 </f:then>
                 <f:else>
                     <f:link.action
                         action="show"
-                        arguments="{entry: firstEntry}">
-                        <psb:translate id="oldestEntry" />
+                        arguments="{chapter: firstChapter}">
+                        <psb:translate id="oldestChapter" />
                     </f:link.action>
                 </f:else>
             </f:if>
             |
-            <f:if condition="{currentEntry} == {previousEntry}">
+            <f:if condition="{currentChapter} == {previousChapter}">
                 <f:then>
-                    <psb:translate id="previousEntry" />
+                    <psb:translate id="previousChapter" />
                 </f:then>
                 <f:else>
                     <f:link.action
                         action="show"
-                        arguments="{entry: previousEntry}">
-                        <psb:translate id="previousEntry" />
+                        arguments="{chapter: previousChapter}">
+                        <psb:translate id="previousChapter" />
                     </f:link.action>
                 </f:else>
             </f:if>
             |
-            <f:if condition="{currentEntry} == {nextEntry}">
+            <f:if condition="{currentChapter} == {nextChapter}">
                 <f:then>
-                    <psb:translate id="nextEntry" />
+                    <psb:translate id="nextChapter" />
                 </f:then>
                 <f:else>
                     <f:link.action
                         action="show"
-                        arguments="{entry: nextEntry}">
-                        <psb:translate id="nextEntry" />
+                        arguments="{chapter: nextChapter}">
+                        <psb:translate id="nextChapter" />
                     </f:link.action>
                 </f:else>
             </f:if>
             |
-            <f:if condition="{currentEntry} == {lastEntry}">
+            <f:if condition="{currentChapter} == {lastChapter}">
                 <f:then>
-                    <psb:translate id="latestEntry" />
+                    <psb:translate id="latestChapter" />
                 </f:then>
                 <f:else>
                     <f:link.action
                         action="show"
-                        arguments="{entry: lastEntry}">
-                        <psb:translate id="latestEntry" />
+                        arguments="{chapter: lastChapter}">
+                        <psb:translate id="latestChapter" />
                     </f:link.action>
                 </f:else>
             </f:if>

@@ -11,21 +11,21 @@
                 <source>Chapter</source>
                 <target>Kapitel</target>
             </trans-unit>
-            <trans-unit id="latestEntry">
-                <source>latest entry</source>
-                <target>aktueller Eintrag</target>
+            <trans-unit id="latestChapter">
+                <source>latest chapter</source>
+                <target>aktuelles Kapitel</target>
             </trans-unit>
-            <trans-unit id="nextEntry">
-                <source>next entry</source>
-                <target>nächster Eintrag</target>
+            <trans-unit id="nextChapter">
+                <source>next chapter</source>
+                <target>nächstes Kapitel</target>
             </trans-unit>
-            <trans-unit id="oldestEntry">
-                <source>oldest entry</source>
-                <target>ältester Eintrag</target>
+            <trans-unit id="oldestChapter">
+                <source>oldest chapter</source>
+                <target>ältestes Kapitel</target>
             </trans-unit>
-            <trans-unit id="previousEntry">
-                <source>previous entry</source>
-                <target>vorheriger Eintrag</target>
+            <trans-unit id="previousChapter">
+                <source>previous chapter</source>
+                <target>vorheriges Kapitel</target>
             </trans-unit>
         </body>
     </file>

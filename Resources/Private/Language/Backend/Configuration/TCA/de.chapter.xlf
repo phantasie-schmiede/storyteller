@@ -4,19 +4,24 @@
         date="2024-04-30T09:53:00+01:00"
         original="messages"
         product-name="psb_storybook"
-        source-language="en">
+        source-language="en"
+        target-language="de">
         <body>
             <trans-unit id="contentElements">
                 <source>Content elements</source>
+                <target>Inhaltselemente</target>
             </trans-unit>
             <trans-unit id="ctrl.title">
-                <source>Entry</source>
+                <source>Chapter</source>
+                <target>Kapitel</target>
             </trans-unit>
             <trans-unit id="displayDate">
                 <source>Display date</source>
+                <target>Anzeigedatum</target>
             </trans-unit>
             <trans-unit id="title">
                 <source>Title</source>
+                <target>Titel</target>
             </trans-unit>
         </body>
     </file>

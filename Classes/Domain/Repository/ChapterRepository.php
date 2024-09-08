@@ -10,23 +10,23 @@ declare(strict_types=1);
 
 namespace PSB\PsbStorybook\Domain\Repository;
 
-use PSB\PsbStorybook\Domain\Model\Entry;
+use PSB\PsbStorybook\Domain\Model\Chapter;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Class EntryRepository
+ * Class ChapterRepository
  *
  * @package PSB\PsbStorybook\Domain\Repository
  */
-class EntryRepository extends Repository
+class ChapterRepository extends Repository
 {
     protected $defaultOrderings = [
         'displayDate' => QueryInterface::ORDER_ASCENDING,
     ];
 
-    public function findLast(): ?Entry
+    public function findLast(): ?Chapter
     {
         $query = $this->createQuery();
         $query->setLimit(1)
@@ -41,13 +41,13 @@ class EntryRepository extends Repository
     /**
      * @throws InvalidQueryException
      */
-    public function findNext(Entry $entry): ?Entry
+    public function findNext(Chapter $chapter): ?Chapter
     {
         $query = $this->createQuery();
         $query->matching(
             $query->greaterThan(
                 'displayDate',
-                $entry->getDisplayDate()
+                $chapter->getDisplayDate()
                     ->format('Y-m-d H:i:s')
             )
         );
@@ -60,13 +60,13 @@ class EntryRepository extends Repository
     /**
      * @throws InvalidQueryException
      */
-    public function findPrevious(Entry $entry): ?Entry
+    public function findPrevious(Chapter $chapter): ?Chapter
     {
         $query = $this->createQuery();
         $query->matching(
             $query->lessThan(
                 'displayDate',
-                $entry->getDisplayDate()
+                $chapter->getDisplayDate()
                     ->format('Y-m-d H:i:s')
             )
         );

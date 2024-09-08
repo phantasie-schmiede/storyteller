@@ -9,17 +9,17 @@
             <trans-unit id="chapter">
                 <source>Chapter</source>
             </trans-unit>
-            <trans-unit id="latestEntry">
-                <source>latest entry</source>
+            <trans-unit id="latestChapter">
+                <source>latest chapter</source>
             </trans-unit>
-            <trans-unit id="nextEntry">
-                <source>next entry</source>
+            <trans-unit id="nextChapter">
+                <source>next chapter</source>
             </trans-unit>
-            <trans-unit id="oldestEntry">
-                <source>oldest entry</source>
+            <trans-unit id="oldestChapter">
+                <source>oldest chapter</source>
             </trans-unit>
-            <trans-unit id="previousEntry">
-                <source>previous entry</source>
+            <trans-unit id="previousChapter">
+                <source>previous chapter</source>
             </trans-unit>
         </body>
     </file>

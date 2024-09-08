@@ -19,17 +19,17 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Class Entry
+ * Class Chapter
  *
  * @package PSB\PsbStorybook\Domain\Model
  */
 #[Ctrl(label: 'title', searchFields: ['title'])]
-class Entry extends AbstractEntity
+class Chapter extends AbstractEntity
 {
     /**
      * @var ObjectStorage<TtContent>
      */
-    #[Inline(linkedModel: TtContent::class, mm: 'tx_psbstorybook_entry_content_mm')]
+    #[Inline(linkedModel: TtContent::class, mm: 'tx_psbstorybook_chapter_content_mm')]
     protected ObjectStorage $contentElements;
 
     #[TcaDatetime]
