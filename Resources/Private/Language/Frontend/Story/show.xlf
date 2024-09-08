@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file datatype="plaintext"
+        date="2024-04-30T10:09:00+01:00"
+        original="messages"
+        product-name="psb_storybook"
+        source-language="en">
+        <body>
+            <trans-unit id="chapter">
+                <source>Chapter</source>
+            </trans-unit>
+            <trans-unit id="nextChapter">
+                <source>next chapter</source>
+            </trans-unit>
+            <trans-unit id="previousChapter">
+                <source>previous chapter</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
     <file datatype="plaintext"
-        date="2024-04-30T10:09:00+01:00"
+        date="2024-04-30T10:10:00+01:00"
         original="messages"
         product-name="psb_storybook"
-        source-language="en">
+        source-language="en"
+        target-language="de">
         <body>
             <trans-unit id="chapter">
                 <source>Chapter</source>
-            </trans-unit>
-            <trans-unit id="latestChapter">
-                <source>latest chapter</source>
+                <target>Kapitel</target>
             </trans-unit>
             <trans-unit id="nextChapter">
                 <source>next chapter</source>
-            </trans-unit>
-            <trans-unit id="oldestChapter">
-                <source>oldest chapter</source>
+                <target>nächstes Kapitel</target>
             </trans-unit>
             <trans-unit id="previousChapter">
                 <source>previous chapter</source>
+                <target>vorheriges Kapitel</target>
             </trans-unit>
         </body>
     </file>

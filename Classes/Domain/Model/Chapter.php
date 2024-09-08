@@ -32,11 +32,13 @@ class Chapter extends AbstractEntity
     #[Inline(linkedModel: TtContent::class, mm: 'tx_psbstorybook_chapter_content_mm')]
     protected ObjectStorage $contentElements;
 
-    #[TcaDatetime]
-    protected DateTime $displayDate;
-
     #[Input]
     protected string $title = '';
+
+    public function __construct()
+    {
+        $this->initializeObject();
+    }
 
     /**
      * @return ObjectStorage<TtContent>
@@ -46,27 +48,22 @@ class Chapter extends AbstractEntity
         return $this->contentElements;
     }
 
-    public function getDisplayDate(): DateTime
-    {
-        return $this->displayDate;
-    }
-
     public function getTitle(): string
     {
         return $this->title;
     }
 
+    public function initializeObject(): void
+    {
+        $this->contentElements = new ObjectStorage();
+    }
+
     /**
      * @param ObjectStorage<TtContent> $contentElements
      */
-    public function setContentElements($contentElements): void
+    public function setContentElements(ObjectStorage $contentElements): void
     {
         $this->contentElements = $contentElements;
-    }
-
-    public function setDisplayDate(DateTime $displayDate): void
-    {
-        $this->displayDate = $displayDate;
     }
 
     public function setTitle(string $title): void

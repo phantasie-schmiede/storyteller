@@ -1,0 +1,55 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:psb="http://typo3.org/ns/PSB/PsbFoundation/ViewHelpers"
+    xmlns:psbvh="http://typo3.org/ns/PSB/PsbViewHelpers/ViewHelpers">
+<div class="row">
+    <div class="col-3">
+        <h3 class="h4 align-center">
+            <psb:translate id="chapter" />
+        </h3>
+        <ul>
+            <f:for
+                as="chapter"
+                each="{story.chapters}">
+                <li>
+                    <f:if condition="{currentChapter} == {chapter}">
+                        <f:then>
+                            {chapter.title}
+                        </f:then>
+                        <f:else>
+                            <f:link.action
+                                action="show"
+                                arguments="{chapter: chapter}">
+                                {chapter.title}
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+    <div class="col-9">
+        <div>
+            <h2>{currentChapter.title}</h2>
+            <psbvh:content.render contentElements="{currentChapter.contentElements}" />
+        </div>
+        <div class="nav align-center">
+            <f:if condition="{previousChapter}">
+                <f:link.action
+                    action="show"
+                    arguments="{chapter: previousChapter, story: story}">
+                    <psb:translate id="previousChapter" /> |
+                </f:link.action>
+            </f:if>
+            <f:if condition="{nextChapter}">
+                <f:link.action
+                    action="show"
+                    arguments="{chapter: nextChapter, story: story}">
+                    <psb:translate id="nextChapter" />
+                </f:link.action>
+            </f:if>
+        </div>
+    </div>
+</div>
+</html>

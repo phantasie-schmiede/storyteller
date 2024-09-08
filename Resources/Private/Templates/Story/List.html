@@ -1,0 +1,21 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<div class="row">
+    <div class="col">
+        <ul>
+            <f:for
+                as="story"
+                each="{stories}">
+                <li>
+                    <f:link.action
+                        action="show"
+                        arguments="{story: story}">
+                        {story.title}
+                    </f:link.action>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</div>
+</html>
