@@ -7,9 +7,9 @@
         source-language="en"
         target-language="de">
         <body>
-            <trans-unit id="chapter">
-                <source>Chapter</source>
-                <target>Kapitel</target>
+            <trans-unit id="chapterSelection">
+                <source>Chapter selection</source>
+                <target>Kapitelauswahl</target>
             </trans-unit>
             <trans-unit id="nextChapter">
                 <source>next chapter</source>

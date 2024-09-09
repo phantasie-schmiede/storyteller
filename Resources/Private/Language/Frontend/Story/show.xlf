@@ -6,8 +6,8 @@
         product-name="psb_storybook"
         source-language="en">
         <body>
-            <trans-unit id="chapter">
-                <source>Chapter</source>
+            <trans-unit id="chapterSelection">
+                <source>Chapter selection</source>
             </trans-unit>
             <trans-unit id="nextChapter">
                 <source>next chapter</source>
