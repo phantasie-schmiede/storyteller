@@ -8,7 +8,7 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbStorybook\Controller;
+namespace PSB\PsbStorybook\Service;
 
 use PSB\PsbStorybook\Domain\Model\Chapter;
 use PSB\PsbStorybook\Domain\Model\Story;
@@ -28,9 +28,9 @@ class ChapterService
 
     public function getNextChapter(Story $story, Chapter $chapter): ?Chapter
     {
-        $currentIndex = $story->getChapters()
+        // Position starts with 1 and offset with 0. Therefore, this is already the index for the next chapter.
+        $nextIndex = $story->getChapters()
             ->getPosition($chapter);
-        $nextIndex = $currentIndex + 1;
 
         return $this->getChapterByIndex($story, $nextIndex);
     }
@@ -39,7 +39,12 @@ class ChapterService
     {
         $currentIndex = $story->getChapters()
             ->getPosition($chapter);
-        $previousIndex = $currentIndex - 1;
+
+        /*
+         * Position starts with 1 and offset with 0. Therefore, you have to subtract 2 to get the index of the previous
+         * chapter.
+         */
+        $previousIndex = $currentIndex - 2;
 
         return $this->getChapterByIndex($story, $previousIndex);
     }

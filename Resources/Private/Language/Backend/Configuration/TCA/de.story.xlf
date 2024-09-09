@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file datatype="plaintext"
+        date="2024-09-09T11:56:00+01:00"
+        original="messages"
+        product-name="psb_storybook"
+        source-language="en"
+        target-language="de">
+        <header />
+        <body>
+            <trans-unit id="chapters">
+                <source>Chapters</source>
+                <target>Kapitel</target>
+            </trans-unit>
+            <trans-unit id="ctrl.title">
+                <source>Story</source>
+                <target>Geschichte</target>
+            </trans-unit>
+            <trans-unit id="title">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

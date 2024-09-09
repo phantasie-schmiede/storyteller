@@ -20,7 +20,7 @@
                         <f:else>
                             <f:link.action
                                 action="show"
-                                arguments="{chapter: chapter}">
+                                arguments="{currentChapter: chapter, story: story}">
                                 {chapter.title}
                             </f:link.action>
                         </f:else>
@@ -38,14 +38,14 @@
             <f:if condition="{previousChapter}">
                 <f:link.action
                     action="show"
-                    arguments="{chapter: previousChapter, story: story}">
+                    arguments="{currentChapter: previousChapter, story: story}">
                     <psb:translate id="previousChapter" /> |
                 </f:link.action>
             </f:if>
             <f:if condition="{nextChapter}">
                 <f:link.action
                     action="show"
-                    arguments="{chapter: nextChapter, story: story}">
+                    arguments="{currentChapter: nextChapter, story: story}">
                     <psb:translate id="nextChapter" />
                 </f:link.action>
             </f:if>

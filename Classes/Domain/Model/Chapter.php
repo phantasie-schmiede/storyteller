@@ -10,8 +10,7 @@ declare(strict_types=1);
 
 namespace PSB\PsbStorybook\Domain\Model;
 
-use DateTime;
-use PSB\PsbFoundation\Attribute\TCA\ColumnType\Datetime as TcaDatetime;
+use PSB\PsbFoundation\Attribute\TCA\Column;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Inline;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Input;
 use PSB\PsbFoundation\Attribute\TCA\Ctrl;
@@ -32,6 +31,7 @@ class Chapter extends AbstractEntity
     #[Inline(linkedModel: TtContent::class, mm: 'tx_psbstorybook_chapter_content_mm')]
     protected ObjectStorage $contentElements;
 
+    #[Column(position: 'before:contentElements')]
     #[Input]
     protected string $title = '';
 

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace PSB\PsbStorybook\Domain\Model;
 
+use PSB\PsbFoundation\Attribute\TCA\Column;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Inline;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Input;
 use PSB\PsbFoundation\Attribute\TCA\Ctrl;
@@ -30,6 +31,7 @@ class Story extends AbstractEntity
     #[Inline(linkedModel: Chapter::class, mm: 'tx_psbstorybook_story_chapter_mm')]
     protected ObjectStorage $chapters;
 
+    #[Column(position: 'before:chapters')]
     #[Input]
     protected string $title = '';
 

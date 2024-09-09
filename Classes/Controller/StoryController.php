@@ -14,6 +14,7 @@ use PSB\PsbFoundation\Attribute\PluginAction;
 use PSB\PsbStorybook\Domain\Model\Chapter;
 use PSB\PsbStorybook\Domain\Model\Story;
 use PSB\PsbStorybook\Domain\Repository\StoryRepository;
+use PSB\PsbStorybook\Service\ChapterService;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -30,14 +31,21 @@ class StoryController extends ActionController
     ) {
     }
 
+    #[PluginAction(default: true)]
     public function listAction(): ResponseInterface
     {
+        $stories = $this->storyRepository->findAll();
+
+        if (1 === $stories->count()) {
+            return $this->redirect('show', null, null, ['story' => $stories->getFirst()]);
+        }
+
         $this->view->assign('stories', $this->storyRepository->findAll());
 
         return $this->htmlResponse();
     }
 
-    #[PluginAction(default: true)]
+    #[PluginAction]
     public function showAction(Story $story, Chapter $currentChapter = null): ResponseInterface
     {
         $currentChapter ??= $this->chapterService->getFirstChapter($story);
