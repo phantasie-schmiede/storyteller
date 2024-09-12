@@ -15,6 +15,9 @@
             <trans-unit id="displayDate">
                 <source>Display date</source>
             </trans-unit>
+            <trans-unit id="slug">
+                <source>URL segment</source>
+            </trans-unit>
             <trans-unit id="title">
                 <source>Title</source>
             </trans-unit>

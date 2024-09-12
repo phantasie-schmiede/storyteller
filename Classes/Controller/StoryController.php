@@ -37,7 +37,14 @@ class StoryController extends ActionController
         $stories = $this->storyRepository->findAll();
 
         if (1 === $stories->count()) {
-            return $this->redirect('show', null, null, ['story' => $stories->getFirst()]);
+            $story = $stories->getFirst();
+
+            return $this->redirect(
+                'show', null, null, [
+                    'currentChapter' => $this->chapterService->getFirstChapter($story),
+                    'story'          => $story,
+                ]
+            );
         }
 
         $this->view->assign('stories', $this->storyRepository->findAll());

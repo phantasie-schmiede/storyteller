@@ -13,6 +13,9 @@
             <trans-unit id="ctrl.title">
                 <source>Story</source>
             </trans-unit>
+            <trans-unit id="slug">
+                <source>URL segment</source>
+            </trans-unit>
             <trans-unit id="title">
                 <source>Title</source>
             </trans-unit>

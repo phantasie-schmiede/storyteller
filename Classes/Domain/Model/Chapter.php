@@ -13,6 +13,7 @@ namespace PSB\PsbStorybook\Domain\Model;
 use PSB\PsbFoundation\Attribute\TCA\Column;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Inline;
 use PSB\PsbFoundation\Attribute\TCA\ColumnType\Input;
+use PSB\PsbFoundation\Attribute\TCA\ColumnType\Slug;
 use PSB\PsbFoundation\Attribute\TCA\Ctrl;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -25,13 +26,30 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 #[Ctrl(label: 'title', searchFields: ['title'])]
 class Chapter extends AbstractEntity
 {
+    public const SLUG_GENEREATOR_OPTIONS = [
+        'fields'               => [
+            'title',
+            'nav_title',
+        ],
+        'fieldSeparator'       => '/',
+        'prefixParentPageSlug' => true,
+        'replacements'         => [
+            '/' => '',
+            '.' => '-',
+        ],
+    ];
+
     /**
      * @var ObjectStorage<TtContent>
      */
+    #[Column(position: 'after:slug')]
     #[Inline(linkedModel: TtContent::class, mm: 'tx_psbstorybook_chapter_content_mm')]
     protected ObjectStorage $contentElements;
 
-    #[Column(position: 'before:contentElements')]
+    #[Column(position: 'after:title')]
+    #[Slug(eval: '', generatorOptions: self::SLUG_GENEREATOR_OPTIONS)]
+    protected string $slug = '';
+
     #[Input]
     protected string $title = '';
 
@@ -56,18 +74,5 @@ class Chapter extends AbstractEntity
     public function initializeObject(): void
     {
         $this->contentElements = new ObjectStorage();
-    }
-
-    /**
-     * @param ObjectStorage<TtContent> $contentElements
-     */
-    public function setContentElements(ObjectStorage $contentElements): void
-    {
-        $this->contentElements = $contentElements;
-    }
-
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
     }
 }
