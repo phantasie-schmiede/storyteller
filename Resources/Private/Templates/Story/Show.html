@@ -22,7 +22,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="list-group">
+                <ul class="list-group list-group-flush">
                     <f:for
                         as="chapter"
                         each="{story.chapters}">
@@ -54,7 +54,7 @@
             <h2>{currentChapter.title}</h2>
             <psbvh:content.render contentElements="{currentChapter.contentElements}" />
         </div>
-        <div class="nav align-center">
+        <div class="text-center">
             <f:if condition="{previousChapter}">
                 <f:link.action
                     action="show"
