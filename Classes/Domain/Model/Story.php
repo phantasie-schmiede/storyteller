@@ -23,7 +23,10 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  *
  * @package PSB\PsbStorybook\Domain\Model
  */
-#[Ctrl(label: 'title', searchFields: ['title'])]
+#[Ctrl(label: 'title', searchFields: [
+    'subtitle',
+    'title',
+])]
 class Story extends AbstractEntity
 {
     public const SLUG_GENEREATOR_OPTIONS = [
@@ -49,6 +52,9 @@ class Story extends AbstractEntity
     protected string $slug = '';
 
     #[Input]
+    protected string $subtitle = '';
+
+    #[Input]
     protected string $title = '';
 
     public function __construct()
@@ -59,6 +65,11 @@ class Story extends AbstractEntity
     public function getChapters(): ObjectStorage
     {
         return $this->chapters;
+    }
+
+    public function getSubtitle(): string
+    {
+        return $this->subtitle;
     }
 
     public function getTitle(): string

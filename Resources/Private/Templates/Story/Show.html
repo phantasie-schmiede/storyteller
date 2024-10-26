@@ -7,6 +7,10 @@
     <div class="col col-md-10 col-lg-8 col-xl-6">
         <h1>{story.title}</h1>
 
+        <f:if condition="{story.subtitle}">
+            <h2 class="small text-muted">{story.subtitle}</h2>
+        </f:if>
+
         <div class="d-flex justify-content-end">
             <a class="text-secondary" data-bs-toggle="offcanvas" href="#chapterSelection" role="button" aria-controls="chapterSelection">
                 <psb:translate id="chapterSelection" />
