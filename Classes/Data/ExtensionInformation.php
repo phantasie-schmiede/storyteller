@@ -2,23 +2,23 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB Storybook.
+ * This file is part of PSBits Storybook.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbStorybook\Data;
+namespace PSBits\Storybook\Data;
 
-use PSB\PsbStorybook\Controller\StoryController;
-use PSB\PsbFoundation\Data\AbstractExtensionInformation;
-use PSB\PsbFoundation\Data\PluginConfiguration;
+use PSBits\Storybook\Controller\StoryController;
+use PSBits\Foundation\Data\AbstractExtensionInformation;
+use PSBits\Foundation\Data\PluginConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class ExtensionInformation
  *
- * @package PSB\PsbStorybook\Data
+ * @package PSBits\Storybook\Data
  */
 class ExtensionInformation extends AbstractExtensionInformation
 {

@@ -2,26 +2,26 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB Storybook.
+ * This file is part of PSBits Storybook.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbStorybook\Domain\Model;
+namespace PSBits\Storybook\Domain\Model;
 
-use PSB\PsbFoundation\Attribute\TCA\Column;
-use PSB\PsbFoundation\Attribute\TCA\ColumnType\Inline;
-use PSB\PsbFoundation\Attribute\TCA\ColumnType\Input;
-use PSB\PsbFoundation\Attribute\TCA\ColumnType\Slug;
-use PSB\PsbFoundation\Attribute\TCA\Ctrl;
+use PSBits\Foundation\Attribute\TCA\Column;
+use PSBits\Foundation\Attribute\TCA\ColumnType\Inline;
+use PSBits\Foundation\Attribute\TCA\ColumnType\Input;
+use PSBits\Foundation\Attribute\TCA\ColumnType\Slug;
+use PSBits\Foundation\Attribute\TCA\Ctrl;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Class Story
  *
- * @package PSB\PsbStorybook\Domain\Model
+ * @package PSBits\Storybook\Domain\Model
  */
 #[Ctrl(label: 'title', searchFields: [
     'subtitle',
@@ -44,7 +44,7 @@ class Story extends AbstractEntity
      * @var ObjectStorage<Chapter>
      */
     #[Column(position: 'after:slug')]
-    #[Inline(linkedModel: Chapter::class, mm: 'tx_psbstorybook_story_chapter_mm')]
+    #[Inline(linkedModel: Chapter::class, mm: 'tx_storybook_story_chapter_mm')]
     protected ObjectStorage $chapters;
 
     #[Column(position: 'after:title')]

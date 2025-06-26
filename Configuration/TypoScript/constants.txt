@@ -1,6 +1,6 @@
-plugin.tx_psbstorybook {
+plugin.tx_storybook {
   persistence {
-    # cat=plugin.psb_storybook//a; type=string; label=Default storage PID
+    # cat=plugin.storybook//a; type=string; label=Default storage PID
     storagePid =
   }
 }

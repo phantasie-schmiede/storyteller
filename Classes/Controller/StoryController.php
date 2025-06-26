@@ -2,25 +2,25 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB Storybook.
+ * This file is part of PSBits Storybook.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbStorybook\Controller;
+namespace PSBits\Storybook\Controller;
 
-use PSB\PsbFoundation\Attribute\PluginAction;
-use PSB\PsbStorybook\Domain\Model\Chapter;
-use PSB\PsbStorybook\Domain\Model\Story;
-use PSB\PsbStorybook\Domain\Repository\StoryRepository;
+use PSBits\Foundation\Attribute\PluginAction;
+use PSBits\Storybook\Domain\Model\Chapter;
+use PSBits\Storybook\Domain\Model\Story;
+use PSBits\Storybook\Domain\Repository\StoryRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Class StoryController
  *
- * @package PSB\PsbStorybook\Controller
+ * @package PSBits\Storybook\Controller
  */
 class StoryController extends ActionController
 {

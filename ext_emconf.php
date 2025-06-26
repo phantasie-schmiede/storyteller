@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-$EM_CONF['psb_storybook'] = [
+$EM_CONF['storybook'] = [
     'author'           => 'Daniel Ablass',
     'author_email'     => 'dn@phantasie-schmiede.de',
     'category'         => 'plugin',
@@ -9,12 +9,12 @@ $EM_CONF['psb_storybook'] = [
     'constraints'      => [
         'conflicts' => [],
         'depends'   => [
-            'psb_foundation' => '2.2.1',
+            'foundation' => '3.0',
         ],
         'suggests'  => [],
     ],
     'description'      => 'Blog-like way of publishing content with page browser',
     'state'            => 'beta',
-    'title'            => 'PSbits | Storybook',
+    'title'            => 'PSBits | Storybook',
     'version'          => '0.0.0',
 ];

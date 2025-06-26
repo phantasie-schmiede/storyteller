@@ -8,12 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PSB\\PsbStorybook\\": "Classes/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "PSB\\PsbStorybook\\Tests\\": "Tests/"
+            "PSBits\\Storybook\\": "Classes/"
         }
     },
     "config": {
@@ -24,9 +19,8 @@
     "description": "Blog-like way of publishing content with page browser",
     "extra": {
         "typo3/cms": {
-            "app-dir": ".Build",
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "extension-key": "psb_storybook",
+            "extension-key": "storybook",
             "web-dir": ".Build/public"
         }
     },
@@ -36,9 +30,9 @@
         "typo3"
     ],
     "license": "GPL-3.0-or-later",
-    "name": "psb/psb-storybook",
+    "name": "psbits/storybook",
     "require": {
-        "psb/psb-foundation": "@dev"
+        "psbits/foundation": "^3.0"
     },
     "require-dev": {
         "typo3/testing-framework": "^8.0.9"

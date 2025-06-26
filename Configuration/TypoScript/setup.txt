@@ -1,5 +1,5 @@
-plugin.tx_psbstorybook {
+plugin.tx_storybook {
   persistence {
-    storagePid = {$plugin.tx_psbstorybook.persistence.storagePid}
+    storagePid = {$plugin.tx_storybook.persistence.storagePid}
   }
 }
