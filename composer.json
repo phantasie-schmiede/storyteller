@@ -32,10 +32,12 @@
     "license": "GPL-3.0-or-later",
     "name": "psbits/storybook",
     "require": {
-        "psbits/foundation": "^3.0"
+        "php": "^8.3",
+        "psbits/foundation": "^3.0",
+        "typo3/cms-core": "^13.4"
     },
     "require-dev": {
-        "typo3/testing-framework": "^8.0.9"
+        "roave/security-advisories": "dev-latest"
     },
     "type": "typo3-cms-extension"
 }
