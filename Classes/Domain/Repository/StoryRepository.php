@@ -10,11 +10,13 @@ declare(strict_types=1);
 
 namespace PSBits\Storybook\Domain\Repository;
 
+use PSBits\Storybook\Domain\Model\Story;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Class StoryRepository
  *
+ * @extends Repository<Story>
  * @package PSBits\Storybook\Domain\Repository
  */
 class StoryRepository extends Repository

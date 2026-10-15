@@ -11,13 +11,12 @@ declare(strict_types=1);
 namespace PSBits\Storybook\Domain\Repository;
 
 use PSBits\Storybook\Domain\Model\Chapter;
-use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Class ChapterRepository
  *
+ * @extends Repository<Chapter>
  * @package PSBits\Storybook\Domain\Repository
  */
 class ChapterRepository extends Repository

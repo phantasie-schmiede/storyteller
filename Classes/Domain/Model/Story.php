@@ -62,6 +62,9 @@ class Story extends AbstractEntity
         $this->initializeObject();
     }
 
+    /**
+     * @return ObjectStorage<Chapter>
+     */
     public function getChapters(): ObjectStorage
     {
         return $this->chapters;
@@ -113,8 +116,16 @@ class Story extends AbstractEntity
 
     private function getChapterByIndex(int $index): ?Chapter
     {
-        return $this->getChapters()
-            ->offsetExists($index) ? $this->getChapters()
-            ->offsetGet($index) : null;
+        $chapters = $this->getChapters();
+        $key      = (string)$index;
+
+        if (false === $chapters->offsetExists($key)) {
+            return null;
+        }
+
+        /** @var Chapter $chapter */
+        $chapter = $chapters->offsetGet($key);
+
+        return $chapter;
     }
 }
