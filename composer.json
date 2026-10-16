@@ -23,7 +23,6 @@
     "description": "Blog-like way of publishing content with page browser",
     "extra": {
         "typo3/cms": {
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
             "extension-key": "storybook",
             "web-dir": ".Build/public"
         }
