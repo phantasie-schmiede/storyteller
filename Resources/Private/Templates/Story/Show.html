@@ -3,80 +3,98 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:psb="http://typo3.org/ns/PSBits/Foundation/ViewHelpers"
     xmlns:psbvh="http://typo3.org/ns/PSBits/ViewHelpers/ViewHelpers">
-<div class="justify-content-center row">
-    <div class="col col-md-10 col-lg-8 col-xl-6">
-        <h1>{story.title}</h1>
+    <div class="justify-content-center row">
+        <div class="col col-md-10 col-lg-8 col-xl-6">
+            <h1>{story.title}</h1>
 
-        <f:if condition="{story.subtitle}">
-            <h2 class="small text-muted">{story.subtitle}</h2>
-        </f:if>
+            <f:if condition="{story.subtitle}">
+                <h2 class="small text-muted">{story.subtitle}</h2>
+            </f:if>
 
-        <div class="d-flex justify-content-end">
-            <a class="text-secondary" data-bs-toggle="offcanvas" href="#chapterSelection" role="button" aria-controls="chapterSelection">
-                <psb:translate id="chapterSelection" />
-                <core:icon identifier="templates-caret-down" />
-            </a>
-        </div>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="chapterSelection" aria-labelledby="chapterSelectionLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="chapterSelectionLabel">
+            <div class="d-flex justify-content-end">
+                <a
+                    aria-controls="chapterSelection"
+                    class="text-secondary"
+                    data-bs-toggle="offcanvas"
+                    href="#chapterSelection"
+                    role="button">
                     <psb:translate id="chapterSelection" />
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <core:icon identifier="templates-caret-down" />
+                </a>
             </div>
-            <div class="offcanvas-body">
-                <ul class="list-group list-group-flush">
-                    <f:for
-                        as="chapter"
-                        each="{story.chapters}">
-                        <f:if condition="{currentChapter} == {chapter}">
-                            <f:then>
-                                <li class="list-group-item active" aria-current="true">
-                                    {chapter.title}
-                                </li>
-                            </f:then>
-                            <f:else>
-                                <f:link.action
-                                    action="show"
-                                    arguments="{currentChapter: chapter, story: story}"
-                                    class="list-group-item list-group-item-action">
-                                    {chapter.title}
-                                </f:link.action>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="justify-content-center mt-3 row">
-    <div class="col col-md-10 col-lg-8 col-xl-6">
-        <div>
-            <h2>{currentChapter.title}</h2>
-            <psbvh:content.render contentElements="{currentChapter.contentElements}" />
-        </div>
-        <div class="text-center">
-            <f:if condition="{previousChapter}">
-                <f:link.action
-                    action="show"
-                    arguments="{currentChapter: previousChapter, story: story}">
-                    <psb:translate id="previousChapter" />
-                </f:link.action>
-            </f:if>
-            <f:if condition="{previousChapter} && {nextChapter}">
-                &nbsp;|&nbsp;
-            </f:if>
-            <f:if condition="{nextChapter}">
-                <f:link.action
-                    action="show"
-                    arguments="{currentChapter: nextChapter, story: story}">
-                    <psb:translate id="nextChapter" />
-                </f:link.action>
-            </f:if>
+            <div
+                aria-labelledby="chapterSelectionLabel"
+                class="offcanvas offcanvas-end"
+                id="chapterSelection"
+                tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title"
+                        id="chapterSelectionLabel">
+                        <psb:translate id="chapterSelection" />
+                    </h5>
+                    <button
+                        aria-label="Close"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="list-group list-group-flush">
+                        <f:for
+                            as="chapter"
+                            each="{story.chapters}">
+                            <f:if condition="{currentChapter} == {chapter}">
+                                <f:then>
+                                    <li
+                                        aria-current="true"
+                                        class="active list-group-item">
+                                        {chapter.title}
+                                    </li>
+                                </f:then>
+                                <f:else>
+                                    <f:link.action
+                                        action="show"
+                                        arguments="{currentChapter: chapter, story: story}"
+                                        class="list-group-item list-group-item-action">
+                                        {chapter.title}
+                                    </f:link.action>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="justify-content-center mt-3 row">
+        <div class="col col-md-10 col-lg-8 col-xl-6">
+            <div>
+                <h2>{currentChapter.title}</h2>
+                <psbvh:content.render
+                    contentElements="{currentChapter.contentElements}" />
+            </div>
+            <div class="text-center">
+                <f:if condition="{previousChapter}">
+                    <f:link.action
+                        action="show"
+                        arguments="{currentChapter: previousChapter, story: story}">
+                        <psb:translate id="previousChapter" />
+                    </f:link.action>
+                </f:if>
+                <f:if condition="{previousChapter} && {nextChapter}">
+                    &nbsp;|&nbsp;
+                </f:if>
+                <f:if condition="{nextChapter}">
+                    <f:link.action
+                        action="show"
+                        arguments="{currentChapter: nextChapter, story: story}">
+                        <psb:translate id="nextChapter" />
+                    </f:link.action>
+                </f:if>
+            </div>
+        </div>
+    </div>
 </html>
