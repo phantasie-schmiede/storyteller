@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -38,9 +39,10 @@ class StoryController extends ActionController
             $story = $stories->getFirst();
 
             return $this->redirect(
-                actionName: 'show', arguments: [
-                'story' => $story,
-            ]
+                actionName: 'show',
+                arguments: [
+                    'story' => $story,
+                ]
             );
         }
 

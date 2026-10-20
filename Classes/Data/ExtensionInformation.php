@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -10,9 +11,9 @@ declare(strict_types=1);
 
 namespace PSBits\Storybook\Data;
 
-use PSBits\Storybook\Controller\StoryController;
 use PSBits\Foundation\Data\AbstractExtensionInformation;
 use PSBits\Foundation\Data\PluginConfiguration;
+use PSBits\Storybook\Controller\StoryController;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
