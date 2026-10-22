@@ -11,6 +11,12 @@
             "PSBits\\Storyteller\\": "Classes/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "PSBits\\Storyteller\\Tests\\": "Tests/",
+            "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms-core/Tests"
+        }
+    },
     "config": {
         "allow-plugins": {
             "typo3/class-alias-loader": true,
@@ -43,9 +49,11 @@
         "friendsofphp/php-cs-fixer": "^3.95",
         "helmich/typo3-typoscript-lint": "^3.3",
         "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^11",
         "psbits/qa": "@dev",
         "roave/security-advisories": "dev-latest",
-        "saschaegerer/phpstan-typo3": "^2.1"
+        "saschaegerer/phpstan-typo3": "^2.1 || ^3.0",
+        "typo3/testing-framework": "^9.5"
     },
     "scripts": {
         "analyze:php": "phpstan analyse --configuration=Build/Quality/phpstan.neon.dist --no-progress",
@@ -79,6 +87,20 @@
         ],
         "post-update-cmd": [
             ".Build/bin/qa link"
+        ],
+        "qa": [
+            "@fix:all",
+            "@lint:all",
+            "@test:all"
+        ],
+        "test:all": [
+            "@test:unit"
+        ],
+        "test:coverage": "sh .Build/vendor/psbits/qa/Resources/Testing/Scripts/runCoverage.sh",
+        "test:coverage:update-baseline": "sh .Build/vendor/psbits/qa/Resources/Testing/Scripts/runCoverage.sh --update-baseline",
+        "test:unit": [
+            "php .Build/vendor/psbits/qa/Resources/Testing/renderPhpunitXml.php unit",
+            "php -d memory_limit=1G .Build/bin/phpunit -c .Build/phpunit/UnitTests.xml"
         ],
         "validate:composer": "composer validate --no-check-publish"
     },
