@@ -1,6 +1,6 @@
-plugin.tx_storybook {
+plugin.tx_storyteller {
   persistence {
-    # cat=plugin.storybook//a; type=string; label=Default storage PID
+    # cat=plugin.storyteller//a; type=string; label=Default storage PID
     storagePid =
   }
 }

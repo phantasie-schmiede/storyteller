@@ -4,13 +4,13 @@
         datatype="plaintext"
         date="2024-04-30T10:01:00+01:00"
         original="messages"
-        product-name="storybook"
+        product-name="storyteller"
         source-language="en"
         target-language="de">
         <body>
-            <trans-unit id="plugin.storybook.title">
-                <source>Storybook</source>
-                <target>Geschichtenbuch</target>
+            <trans-unit id="plugin.storyteller.title">
+                <source>Storyteller</source>
+                <target>Geschichten</target>
             </trans-unit>
         </body>
     </file>

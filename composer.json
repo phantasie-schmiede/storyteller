@@ -8,7 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PSBits\\Storybook\\": "Classes/"
+            "PSBits\\Storyteller\\": "Classes/"
         }
     },
     "config": {
@@ -23,7 +23,7 @@
     "description": "Blog-like way of publishing content with page browser",
     "extra": {
         "typo3/cms": {
-            "extension-key": "storybook",
+            "extension-key": "storyteller",
             "web-dir": ".Build/public"
         }
     },
@@ -33,7 +33,7 @@
         "typo3"
     ],
     "license": "GPL-3.0-or-later",
-    "name": "psbits/storybook",
+    "name": "psbits/storyteller",
     "require": {
         "php": "^8.3",
         "psbits/foundation": "^4.0",

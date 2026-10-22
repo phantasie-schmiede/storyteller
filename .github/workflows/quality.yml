@@ -139,7 +139,7 @@ jobs:
 
       - name: Ensure ext_emconf.php matches tag
         run: |
-          emconf="$(php -r '$_EXTKEY="storybook"; include "ext_emconf.php"; echo $EM_CONF["storybook"]["version"];'")"
+          emconf="$(php -r '$_EXTKEY="storyteller"; include "ext_emconf.php"; echo $EM_CONF["storyteller"]["version"];'")"
           if [[ "$emconf" != "$version" ]]; then
             echo "ext_emconf.php ($emconf) does not match tag ($version), aborting." >&2
             exit 1

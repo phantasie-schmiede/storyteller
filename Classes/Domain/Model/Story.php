@@ -3,13 +3,13 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSBits Storybook.
+ * This file is part of PSBits Storyteller.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSBits\Storybook\Domain\Model;
+namespace PSBits\Storyteller\Domain\Model;
 
 use PSBits\Foundation\Attribute\TCA\Column;
 use PSBits\Foundation\Attribute\TCA\ColumnType\Inline;
@@ -22,7 +22,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 /**
  * Class Story
  *
- * @package PSBits\Storybook\Domain\Model
+ * @package PSBits\Storyteller\Domain\Model
  */
 #[Ctrl(label: 'title', searchFields: [
     'subtitle',
@@ -45,7 +45,7 @@ class Story extends AbstractEntity
      * @var ObjectStorage<Chapter>
      */
     #[Column(position: 'after:slug')]
-    #[Inline(linkedModel: Chapter::class, mm: 'tx_storybook_story_chapter_mm')]
+    #[Inline(linkedModel: Chapter::class, mm: 'tx_storyteller_story_chapter_mm')]
     protected ObjectStorage $chapters;
 
     #[Column(position: 'after:title')]

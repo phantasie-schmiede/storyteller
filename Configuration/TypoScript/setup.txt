@@ -1,5 +1,5 @@
-plugin.tx_storybook {
+plugin.tx_storyteller {
   persistence {
-    storagePid = {$plugin.tx_storybook.persistence.storagePid}
+    storagePid = {$plugin.tx_storyteller.persistence.storagePid}
   }
 }

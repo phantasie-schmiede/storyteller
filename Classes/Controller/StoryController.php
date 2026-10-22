@@ -3,25 +3,25 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSBits Storybook.
+ * This file is part of PSBits Storyteller.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSBits\Storybook\Controller;
+namespace PSBits\Storyteller\Controller;
 
 use PSBits\Foundation\Attribute\PluginAction;
-use PSBits\Storybook\Domain\Model\Chapter;
-use PSBits\Storybook\Domain\Model\Story;
-use PSBits\Storybook\Domain\Repository\StoryRepository;
+use PSBits\Storyteller\Domain\Model\Chapter;
+use PSBits\Storyteller\Domain\Model\Story;
+use PSBits\Storyteller\Domain\Repository\StoryRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Class StoryController
  *
- * @package PSBits\Storybook\Controller
+ * @package PSBits\Storyteller\Controller
  */
 class StoryController extends ActionController
 {

@@ -1,11 +1,11 @@
-# Storybook
+# Storyteller
 
 Blog-like way of publishing content with page browser
 
 ## Installation
 
 ```bash
-composer require psbits/storybook
+composer require psbits/storyteller
 ```
 
 ## Development

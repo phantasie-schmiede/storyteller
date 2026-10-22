@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "storyteller",
   "version": "1.0.0",
   "description": "Blog-like way of publishing content with page browser",
   "scripts": {
@@ -8,15 +8,7 @@
     "lint:classes": "node .Build/vendor/psbits/qa/Resources/Quality/lint-class-attributes.mjs --dry-run",
     "lint:htmlxml": "prettier --config .Build/vendor/psbits/qa/Resources/Quality/prettier.config.mjs --ignore-path Build/Quality/.prettierignore --check \"**/*.{html,xml,xlf}\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/psbits/storybook.git"
-  },
   "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/psbits/storybook/issues"
-  },
-  "homepage": "https://github.com/psbits/storybook#readme",
   "engines": {
     "node": ">=24"
   },
