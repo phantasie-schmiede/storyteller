@@ -56,11 +56,19 @@ class StoryController extends ActionController
     {
         $currentChapter ??= $story->getFirstChapter();
 
+        $nextChapter     = null;
+        $previousChapter = null;
+
+        if (null !== $currentChapter) {
+            $nextChapter     = $story->getNextChapter($currentChapter);
+            $previousChapter = $story->getPreviousChapter($currentChapter);
+        }
+
         $this->view->assignMultiple([
             'story'           => $story,
             'currentChapter'  => $currentChapter,
-            'nextChapter'     => $story->getNextChapter($currentChapter),
-            'previousChapter' => $story->getPreviousChapter($currentChapter),
+            'nextChapter'     => $nextChapter,
+            'previousChapter' => $previousChapter,
         ]);
 
         return $this->htmlResponse();
