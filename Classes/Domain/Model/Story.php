@@ -71,14 +71,23 @@ class Story extends AbstractEntity
         return $this->chapters;
     }
 
-    public function getFirstChapter(): Chapter
+    public function getFirstChapter(): ?Chapter
     {
-        return $this->getChapters()
-            ->offsetGet(0);
+        $chapters = $this->getChapters();
+
+        if (false === $chapters->offsetExists('0')) {
+            return null;
+        }
+
+        return $chapters->offsetGet(0);
     }
 
     public function getNextChapter(Chapter $chapter): ?Chapter
     {
+        if (false === $this->getChapters()->contains($chapter)) {
+            return null;
+        }
+
         // Position starts with 1 and offset with 0. Therefore, this is already the index for the next chapter.
         $nextIndex = $this->getChapters()
             ->getPosition($chapter);
@@ -88,6 +97,10 @@ class Story extends AbstractEntity
 
     public function getPreviousChapter(Chapter $chapter): ?Chapter
     {
+        if (false === $this->getChapters()->contains($chapter)) {
+            return null;
+        }
+
         $currentIndex = $this->getChapters()
             ->getPosition($chapter);
 
