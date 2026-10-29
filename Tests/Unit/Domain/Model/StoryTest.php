@@ -70,6 +70,19 @@ final class StoryTest extends TestCase
         self::assertNull($this->story->getPreviousChapter($first));
     }
 
+    public function testGetFirstChapterOfAStoryWithoutChaptersReturnsNull(): void
+    {
+        self::assertNull($this->story->getFirstChapter());
+    }
+
+    public function testGetNextChapterOfAForeignChapterReturnsNull(): void
+    {
+        $foreign = new Chapter();
+
+        self::assertNull($this->story->getNextChapter($foreign));
+        self::assertNull($this->story->getPreviousChapter($foreign));
+    }
+
     /**
      * @return Chapter[]
      */

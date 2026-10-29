@@ -17,5 +17,5 @@ $EM_CONF[$_EXTKEY] = [
     'description'      => 'Blog-like way of publishing content with page browser',
     'state'            => 'alpha',
     'title'            => 'PSBits | Storyteller',
-    'version'          => '0.1.0',
+    'version'          => '0.1.1',
 ];
